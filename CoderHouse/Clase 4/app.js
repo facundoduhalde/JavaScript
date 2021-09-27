@@ -2,12 +2,12 @@
 
 let calculoIva = precio => precio * 1.21
 
-function tomarDatos(){
-     let precio = Number(prompt("Ingrese el valor del producto del que desea calcular el IVA"))
+function tomarDatos() {
+    let precio = Number(prompt("Ingrese el valor del producto del que desea calcular el IVA"))
 
-     console.log(calculoIva(precio));
- } 
- 
+    console.log(calculoIva(precio));
+}
+
 tomarDatos();
 
 

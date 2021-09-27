@@ -16,7 +16,7 @@ function calculoCuotas(precioConIva) {
     cantidadCuotas = Number(prompt("Ingrese la cantidad de cuotas con las que desea abonar el producto (3, 6, 12 o 18 cuotas)"))
 
     switch (cantidadCuotas) {
-       case 3: 
+        case 3:
             precioEnCuotas = precioConIva / 3
             break;
         case 6:
