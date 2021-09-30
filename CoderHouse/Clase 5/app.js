@@ -3,9 +3,9 @@
 class Productos {
     constructor(nombreProducto, categoriaProducto, precioProducto, stockProducto, activo) {
         this.nombre = nombreProducto,
-        this.categoria = categoriaProducto,
-        this.precio = precioProducto,
-        this.stock = stockProducto
+            this.categoria = categoriaProducto,
+            this.precio = precioProducto,
+            this.stock = stockProducto
         this.activo = activo
     }
 
@@ -71,7 +71,7 @@ console.log(persona.lenguajeFavorito.nombre); // Mejores practicas
         this.lf = lf
 }
 
-Personas.prototype.hablar = function() { 
+Personas.prototype.hablar = function() {
     console.log(`Hola, estoy hablando, mi nombre es ${this.nombre} `);
 }
 
@@ -115,7 +115,7 @@ persona1.entrenar(60)
  */
 
 // Ecommerce
-/* 
+/*
 class Productos {
     constructor(nombreProducto, categoriaProducto, precioProducto, stockProducto, activo) {
         this.nombre = nombreProducto,
