@@ -1,5 +1,61 @@
 /* Arrays */
 
+class Producto {
+    constructor(nombreProducto, precioProducto, categoriaProducto, stockProducto) {
+        this.nombre = nombreProducto;
+        this.precio = precioProducto;
+        this.categoria = categoriaProducto;
+        this.stock = stockProducto;
+
+    }
+
+    calculoIva = precio => {
+        let precioConIva = precio * 1.21
+        return precioConIva
+    }
+
+
+}
+
+let listaProductos = [];
+
+listaProductos.push(new Producto("Colchoneta 100x50", 1500, "Colchonetas", 100))
+listaProductos.push(new Producto("Colchoneta 100x60", 1600, "Colchonetas", 150))
+listaProductos.push(new Producto("Mancuerna 3 Kg", 800, "Mancuernas", 50))
+listaProductos.push(new Producto("Mancuerna 5 Kg", 950, "Mancuernas", 80))
+listaProductos.push(new Producto("SmartWatch", 5000, "Relojes inteligentes", 30))
+
+const agregarProductosALista = () => {
+    let nombre = prompt("Nombre del producto a agregar")
+    let precio = Number(prompt("Precio del producto a agregar"))
+    let categoria = prompt("Categoria del producto a agregar")
+    let stock = Number(prompt("Stock del producto a agregar"))
+
+    let product = new Producto(nombre, precio, categoria, stock)
+
+    listaProductos.push(product)
+}
+
+agregarProductosALista();
+
+
+/*Orderna lista de mayor a menor precio*/
+listaProductos.sort((a, b) => {
+    if (a.precio > b.precio) {
+        return -1
+    }
+    if (a.precio < b.precio) {
+        return 1
+    }
+    return 0
+})
+
+for (let i = 0; i < listaProductos.length; i++) {
+    console.log(`Producto Nº ${i + 1} : Nombre Producto: ` + listaProductos[i].nombre + ` - Categoria Producto:  ` + listaProductos[i].categoria + ` - Precio Producto: ` + listaProductos[i].precio + `- Precio con IVA: ` + listaProductos[i].calculoIva(listaProductos[i].precio));
+}
+
+
+
 /* let lista = ["Persona", "Mascota", 50, 1000, true, false, { nombre: "Facundo", apellido: "Duhalde" }, [1, 2]]
 
 /* console.log(lista[0]);
@@ -8,11 +64,11 @@ console.log(lista[7][0]); */
 /*
 for (let i = 0; i < lista.length; i++) {
     console.log(lista[i]);
-} 
+}
 */
 
 // Metodo push()
-/* 
+/*
 let ferreteria = ["Tornillos", "Madera", "Tarugos"]
 let supermercado = ["Pera", "Manzana", "Banana", "Jamon", "Queso", "Cerveza", "Vino", "Agua", "Leche"]
 console.log(supermercado);
@@ -26,7 +82,7 @@ console.log(supermercado);
 supermercado.unshift("Tomate") //Agrega el elemento al inicio del array
 console.log(supermercado);
 
-supermercado[3] = "Panceta" //Modifica el elemento del indice 
+supermercado[3] = "Panceta" //Modifica el elemento del indice
 console.log(supermercado);
 
 supermercado.sort()
@@ -40,45 +96,7 @@ console.log(listaComprasReducida);
  */
 //let listadoProductos = [{}] //carrito de compas => array de objetos
 
-class Producto {
-    constructor(nombreProducto, precioProducto) {
-        this.nombre = nombreProducto;
-        this.precio = precioProducto;
-        // this.categoria = categoriaProducto;
-        // this.stock = stockProducto;
-        // this.activo = activo;
-    }
-}
 
-let listaProductos = [];
-
-listaProductos.push(new Producto("Colchoneta 100x50", 1500))
-listaProductos.push(new Producto("Colchoneta 100x60", 16000))
-listaProductos.push(new Producto("Mancuerna 3 Kg", 17800))
-listaProductos.push(new Producto("Mancuerna 5 Kg", 1800))
-listaProductos.push(new Producto("SmartWatch", 1900))
-
-const agregarProductosALista = () => {
-    let nombre = prompt("Nombre del producto")
-    let precio = Number(prompt("Precio del producto"))
-    // let categoria = prompt("Categoria del producto")
-    // let stock = Number(prompt("Stock del producto"))
-
-    let product = new Producto(nombre,  precio)
-    //let product = new Producto(nombre,  precio, stock)
-
-    listaProductos.push(product)
-}
-
-listaProductos.sort((a, b) => {
-    if(a.precio > b.precio){
-        return 1
-    }
-    if (a.precio < b.precio){
-        return -1
-    }
-    return 0
-})
 //console.log(listaProductos);
 
 
@@ -87,7 +105,7 @@ listaProductos.sort((a, b) => {
 /*
 for (let i = 0; i < listaProductos.length; i++) {
     console.log(listaProductos[i]);
-} 
+}
 
 //console.log(listaProductos);
 
@@ -109,15 +127,15 @@ for(const prop in obje){
 
 */
 
-listaProductos.forEach(obj => {
+/* listaProductos.forEach(obj => {
     console.log(obj.precio);
 })
 
 //let search = prompt("Buscar Producto")
 //let buscadorUnico = listaProductos.find(obj => obj.nombre == search)
-//console.log(buscadorUnico);  
+//console.log(buscadorUnico);
 
 
 let search = prompt("Buscar Producto")
 let buscadorMultiple = listaProductos.filter(obj => obj.nombre == search)
-console.log(buscadorMultiple.nombre);
+console.log(buscadorMultiple.nombre); */

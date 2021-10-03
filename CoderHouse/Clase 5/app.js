@@ -3,9 +3,9 @@
 class Productos {
     constructor(nombreProducto, categoriaProducto, precioProducto, stockProducto, activo) {
         this.nombre = nombreProducto,
-            this.categoria = categoriaProducto,
-            this.precio = precioProducto,
-            this.stock = stockProducto
+        this.categoria = categoriaProducto,
+        this.precio = precioProducto,
+        this.stock = stockProducto
         this.activo = activo
     }
 
