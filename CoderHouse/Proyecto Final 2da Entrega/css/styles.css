@@ -151,6 +151,9 @@ margin: auto;
     background-color: #c0392b;
 }
 
+ingresoExitoso{
+    color: green;
+}
 footer {
     background: linear-gradient(to right, #1d9ad1, #5b79bc, #934a9c, #a62591);
     text-align: LEFT;

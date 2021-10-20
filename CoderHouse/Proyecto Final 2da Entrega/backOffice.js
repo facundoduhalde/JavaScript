@@ -55,12 +55,19 @@ const guardarDatos = () => {
             newListaProductos.push(producto)
             localStorage.setItem("productos", JSON.stringify(newListaProductos))
         }
-        alert("El producto se ha creado con exito")
+        swal({
+            text: "El producto se ha creado con exito!",
+            icon: "success",
+        });
         document.getElementById("formProductos").reset()
 
     }
-    else{
-        alert("Con el fin de crear un producto, TODOS los campos deben estar completos")
+    else {
+        swal({
+            title: "Error!",
+            text: "Con el fin de crear un producto, TODOS los campos deben estar completos",
+            icon: "error",
+        });
         return
     }
 }
@@ -73,21 +80,28 @@ botonLogin.addEventListener("click", (e) => {
     validarUsuario()
 })
 
-let intentosLogin = 3; 
+let intentosLogin = 3;
 document.getElementById('Productos').hidden = true
 function validarUsuario() {
     //debugger
     var username = document.getElementById("user").value;
     var password = document.getElementById("password").value;
     if (username == "admin" && password == "admin") {
-        alert(`Bienvenido ` + document.getElementById("user").value);
-        window.location = "backOffice.html#formProductos"; 
+        swal({
+            title: "Bienvenido " + username,
+            text: "Te has logueado con exito!",
+            icon: "success",
+        });
         document.getElementById('login').hidden = true
         document.getElementById('Productos').hidden = false
     }
     else {
         intentosLogin--;
-        alert("Contraseña incorrecta, te quedan " + intentosLogin + " intentos");
+        swal({
+            title: "Error!",
+            text: `Los datos ingresados no son válidos. Intentos restantes: ` + intentosLogin,
+            icon: "error",
+        });
         if (intentosLogin == 0) {
             document.getElementById("user").disabled = true;
             document.getElementById("password").disabled = true;
@@ -105,3 +119,5 @@ inputPassword.addEventListener("keypress", function (event) {
         document.getElementById("btnLogin").click();
     }
 });
+
+
