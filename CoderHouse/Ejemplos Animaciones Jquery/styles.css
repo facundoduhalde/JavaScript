@@ -1,0 +1,35 @@
+
+/* estilos generales*/
+* {
+    font-family: OpenSansCustom;
+    background-color: darkgray;
+  }
+
+
+#btnSubmit, #btnToggle{
+  margin-top: 25px;
+  width: 100px;
+    height: 50px;
+  color: black;
+  background-color: wheat;
+  
+}
+
+#mensajeFadeIn:hover, #mensajeSlideDown:hover {
+  cursor:pointer ;
+}
+
+
+#mensajeShow,#mensajeFadeIn,#mensajeSlideDown,#mensajeToggle{
+  border: 1px solid white ;
+}
+
+/*
+<p id="mensajeShow" style="display: none;"> PROBANDO EL METODO SHOW</p>
+        <p id="mensajeFadeIn" style="display: none;"> PROBANDO EL METODO FadeIn</p>
+        <p id="mensajeSlideDown" style="display: none;"> PROBANDO EL SLIDE DOWN</p>
+        <p id="mensajeToggle" style="display: none;"> PROBANDO EL TOOGLE</p>*/
+
+/*
+<p id="mensajeFadeIn" style="display: none;"> PROBANDO EL METODO FadeIn</p>
+        <p id="mensajeSlideDown" style="display: none;"> PROBANDO EL SLIDE DOWN</p>
