@@ -41,25 +41,25 @@ inputNombre.on("keypress", function (e) {
 }); 
  
 inputNombre.change(function(e){
-    divCategoria.fadeIn("10000", function(){});
+    divCategoria.fadeIn(1500);
     inputCategoria.focus();
 })
 
 inputCategoria.change(function(e){
-    divPrecio.fadeIn("10000", function(){});
+    divPrecio.fadeIn(1500);
     inputPrecio.focus();
 })
 
 inputPrecio.change(function(e){
-    divPrecioConIva.fadeIn("10000", function(){});
-    divStock.fadeIn("10000", function(){});
+    divPrecioConIva.fadeIn(1500);
+    divStock.fadeIn(1500);
     var precioIva =  inputPrecio.val() * 1.21
     inputPrecioConIva.val(precioIva)
     
 })
 
 inputStock.change(function(e){
-    divBoton.fadeIn("10000", function(){});
+    divBoton.fadeIn(1500);
 })
 
 const guardarDatos = () => {
@@ -79,21 +79,18 @@ const guardarDatos = () => {
     $("#aca").append(`<p>Stock: ` + producto.stock + `</p>`)
 
     let divProductos = $("#aca");
-    divProductos.fadeIn("slow", function(){});
-    divProductos.fadeOut("fast", function(){});
-    divProductos.fadeIn("fast", function(){});
+    divProductos.fadeIn("slow");
+    divProductos.fadeOut("fast");
+    divProductos.fadeIn("fast");
     divProductos.animate({
         left: '250px',
         height: '300px',
         width: '500px'
       });
 
-      divNombre.fadeOut(500, function(){});
-      divCategoria.fadeOut(600, function(){});
-      divPrecio.fadeOut(700, function(){});
-      divPrecioConIva.fadeOut(800, function(){});
-      divStock.fadeOut(900, function(){});
-      divBoton.fadeOut(1000, function(){});
+      let divFormulario = $("#divForm");
+      divFormulario.fadeOut(2000);
+
      if (localStorage.getItem("productos") == null) {
         listaProductos.push(producto)
         localStorage.setItem("productos", JSON.stringify(listaProductos))
@@ -108,11 +105,3 @@ const guardarDatos = () => {
     return prds;
 } 
 
-/*     $("#btnAgregarArticulo").click(function(){
-      var div = $("#aca");
-      div.fadeIn( "5000", function() {
-        // Animation complete
-      });
-    });
-  
- */
