@@ -1,0 +1,44 @@
+.divCategoria{
+    display: none
+}
+.divPrecio{
+    display: none
+}
+.divPrecioIva{
+    display: none
+}
+.divPrecioDolares{
+    display: none;
+}
+.divStock{
+    display: none;
+}
+.divBoton{
+    display: none;
+}
+#aca{
+    display: none;
+    border: 4px solid;
+    margin: auto;
+    border-image: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66)) 1;
+}
+#aca h2{
+    text-align: center;
+}
+#aca h1{
+    text-align: center;
+}
+#aca p{
+    text-align: center;
+}
+
+.dolarOficial{
+    color: darkolivegreen;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.dolarBlue{
+    color: darkslateblue;
+    font-size: 20px;
+    font-weight: bolder;
+}

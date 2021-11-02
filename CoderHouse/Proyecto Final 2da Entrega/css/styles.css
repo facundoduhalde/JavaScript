@@ -151,6 +151,15 @@ margin: auto;
     background-color: #c0392b;
 }
 
+ .cart__count{
+    padding: 2px 6px;
+    vertical-align: top;
+    margin-left: -20px;
+	color: var(white); 
+	background-color: var(orange);
+	border-radius: 50%;
+}
+
 ingresoExitoso{
     color: green;
 }

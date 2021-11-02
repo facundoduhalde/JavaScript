@@ -1,3 +1,4 @@
+
 class Producto {
     constructor({ nombreProducto, stockProducto, precioProducto, precioConIva, categoriaProducto }) {
         this.nombre = nombreProducto;
@@ -9,8 +10,7 @@ class Producto {
 }
 
 const listaProductos = [];
-
-
+const urlApi = "https://www.dolarsi.com/api/api.php?type=valoresprincipales"
 
 const boton = $("#btnAgregarArticulo")
 
@@ -29,6 +29,7 @@ let divNombre = $(".divNombre");
 let divCategoria = $(".divCategoria");
 let divPrecio = $(".divPrecio");
 let divPrecioConIva = $(".divPrecioIva");
+let divPrecioEnDolares = $(".divPrecioDolares")
 let divStock = $(".divStock");
 let divBoton = $(".divBoton");
 
@@ -54,7 +55,7 @@ inputPrecio.change(function (e) {
     divStock.fadeIn(1500);
     var precioIva = inputPrecio.val() * 1.21
     inputPrecioConIva.val(precioIva)
-
+     calculaPrecioEnDolares()
 })
 
 inputStock.change(function (e) {
@@ -78,8 +79,6 @@ const guardarDatos = () => {
     $("#aca").append(`<p>Stock: ` + producto.stock + `</p>`)
 
     let divProductos = $("#aca");
-    divProductos.fadeIn("slow");
-    divProductos.fadeOut("fast");
     divProductos.fadeIn("fast");
     divProductos.animate({
         left: '250px',
@@ -103,6 +102,26 @@ const guardarDatos = () => {
     const prds = JSON.parse(localStorage.getItem("productos"))
     return prds;
 }
+
+let calculaPrecioEnDolares = () => {
+    divPrecioEnDolares.empty()
+    divPrecioEnDolares.fadeIn(1500)
+
+    $.get(urlApi, (data, estado) => {
+        if (estado == "success") {
+            data.forEach(element => {
+                if (element.casa.nombre === "Dolar Oficial") {
+                    let precioADolarOficial = parseInt(inputPrecio.val()) / parseInt(element.casa.venta)
+                    divPrecioEnDolares.append(`<p class="dolarOficial">Precio en Dolar Oficial: US$ ` + precioADolarOficial.toFixed(2) + ` - Referencia: ` + element.casa.venta + `</p>`)
+                } else if (element.casa.nombre === "Dolar Blue") {
+                    let precioADolarBlue = parseInt(inputPrecio.val()) / parseInt(element.casa.venta)
+                    divPrecioEnDolares.append(`<p class="dolarBlue">Precio en Dolar Blue: US$ ` + precioADolarBlue.toFixed(2) + ` - Referencia: ` + element.casa.venta + `</p>`)
+                }
+            });
+        }
+    })
+}
+
 
 
 
