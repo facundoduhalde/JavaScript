@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts Bellota Text-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300&family=Sniglet:wght@400;800&display=swap"
+        rel="stylesheet">
+    <!--Link Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Mr. Gym - Tienda de articulos de gimnasia</title>
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="img/logo-01.png" alt="Logo Mr. Gym"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quienesSomos">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav me-2">
+                    <li><i class="fa fa-shopping-cart"></i></li>
+                    <span class="cart__count">0</span>
+                    <li><a href="backOffice.html"><i class="fa fa-user"></i></a></li>
+                </ul>
+
+
+            </div>
+        </div>
+    </nav>
+
+    <div id="quienesSomos" class="quienesSomos">
+        <div class="container">
+            <h1>
+                Mr. Gym Shop
+            </h1>
+            <p>Somos una empresa joven con un objetivo claro, honestidad y calidad en nuestros productos. En MrGym nos
+                definimos como un equipo de profesionales con diferentes habilidades y experiencia.</h2>
+                <p>El trato personal y la confianza son pilar de nuestra principal diferencia con nuestros competidores.
+                    MrGym ofrece una atención totalmente personalizada, asesorando y aconsejando. Nuestra exitosa
+                    reputación es lograda a través de la seriedad, responsabilidad, experiencia y profesionalidad, y eso
+                    es lo que alienta a este equipo a seguir en el sendero del crecimiento. Nuestro trabajo nos ha
+                    permitido poder expandirnos hasta poder llegar a la distribución a comercios y gimnasios de todo el
+                    país.</h3>
+        </div>
+    </div>
+    <div id="productos">
+        <div class="container">
+            <br>
+            <h2>Nuestros Productos</h2>
+            <div id="listaProductos" class="row">
+                
+            </div>
+        </div>
+    </div>
+    <div id="contacto" class="contacto">
+        <div class="container">
+            <h2>Contactanos</h2>
+            <div class="row">
+                <div class="col-xs-8 col-md-12">
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label for="inputName" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="inputName">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputSurname" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="inputSurname">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="inputAddress"
+                                placeholder="Introduzca su Dirección">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputCity" class="form-label">Cuidad</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputState" class="form-label">Provincia</label>
+                            <select id="inputState" class="form-select">
+                                <option selected>Seleccione...</option>
+                                <option>Buenos Aires</option>
+                                <option>Cordoba</option>
+                                <option>Mendoza</option>
+                                <option>Tierra del Fuego</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputZip" class="form-label">CP</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputEmail4" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputMessage" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="inputMessage" rows="5"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    Quiero suscribirme al newsletter
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-8 col-md-6">
+                    <h5>Mr. Gym</h5>
+                    <p>©2021 Mr. Gym | Todos los derechos reservados. Diseñó Facundo Duhalde</p>
+                </div>
+                <div class="col-xs-8 col-md-6">
+                    <p>Seguinos en nuestras redes sociales:</p>
+                    <a href="http://www.facebook.com" class="fa fa-facebook"></a>
+                    <a href="http://www.twitter.com" class="fa fa-twitter"></a>
+                    <a href="http://www.instagram.com" class="fa fa-instagram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--JavaScript Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+    <script src="app.js"></script>
+</body>
+
+</html>

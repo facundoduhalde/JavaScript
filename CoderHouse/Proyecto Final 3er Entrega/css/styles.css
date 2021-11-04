@@ -1,0 +1,230 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body,		html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Bellota Text', cursive;
+    line-height: 1.6;
+}
+.contacto{
+    background-image: url("../img/background.jpg");
+    
+}
+
+
+.quienesSomos
+{
+    background-image: url("../img/background.jpg");
+    background-repeat: repeat;
+    height: 450px;
+    width: 100%;
+
+
+}
+.quienesSomos h1{
+    padding: 50px;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.quienesSomos p{
+    color: white;
+    font-weight: bolder;
+}
+.navbar a {
+    color: #336979;
+    animation: desplazarDesdeArriba 1s ease-out;
+    font-size: 1.5em;
+    
+}
+
+.navbar i {
+margin: auto;
+    
+}
+.navbar{
+    background: linear-gradient(to right, white 60%,#1d9ad1, #5b79bc, #934a9c, #a62591);
+}
+
+
+.navbar-brand img{
+    width: 200px;
+    height: 100px;
+    
+}
+
+.card{
+    padding: auto;
+    margin: auto;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-image: linear-gradient(80deg, #1d9ad1, #5b79bc, #934a9c, #a62591) 1;
+    height: 550px;
+    width: 400px;
+}
+
+
+.card .btn{
+    margin-bottom: 20px;
+}
+
+.form .p{
+    margin: auto;
+}
+
+.contacto h2{
+    padding: 50px;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.contacto form{
+    color: white;
+    font-weight: bolder;
+}
+
+.user_card {
+    height: 350px;
+    width: 350px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    background: gainsboro;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.card-img-top{
+    width: auto;
+    height: 250px;
+}
+.brand_logo_container {
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    top: -75px;
+    border-radius: 50%;
+    background: linear-gradient(to right,#1d9ad1, #5b79bc, #934a9c, #a62591);
+    padding: 10px;
+    text-align: center;
+}
+.brand_logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+.form_container {
+    margin-top: 100px;
+}
+.login_btn {
+    width: 100%;
+    background: #934a9c !important;
+    color: white !important;
+}
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.login_container {
+    padding: 0 2rem;
+}
+.input-group-text {
+    background: #934a9c !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+.input_user,
+.input_pass:focus {
+    box-shadow: none;
+    outline: 0px;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #c0392b;
+}
+
+ .cart__count{
+    padding: 2px 6px;
+    vertical-align: top;
+    margin-left: -20px;
+	color: var(white); 
+	background-color: var(orange);
+	border-radius: 50%;
+}
+
+ingresoExitoso{
+    color: green;
+}
+footer {
+    background: linear-gradient(to right, #1d9ad1, #5b79bc, #934a9c, #a62591);
+    text-align: LEFT;
+    color: white;
+    width: 100%;
+    padding: 20PX;
+
+}
+
+footer h5 {
+    font-size: 2em;
+}
+
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 70px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+
+@keyframes desplazarDesdeArriba {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
