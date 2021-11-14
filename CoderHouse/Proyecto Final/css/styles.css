@@ -15,6 +15,12 @@ body,		html {
     
 }
 
+.btnComprar{
+    width: 100%;
+    background: linear-gradient(to right, #1d9ad1, #5b79bc, #934a9c, #a62591);
+    color: white !important;
+    
+}
 
 .quienesSomos
 {
@@ -66,6 +72,8 @@ margin: auto;
     align-items: center;
     margin-bottom: 20px;
     border-image: linear-gradient(80deg, #1d9ad1, #5b79bc, #934a9c, #a62591) 1;
+    height: 550px;
+    width: 400px;
 }
 
 
@@ -106,6 +114,11 @@ margin: auto;
     border-radius: 5px;
     text-align: center;
 
+}
+
+.card-img-top{
+    width: auto;
+    height: 250px;
 }
 .brand_logo_container {
     position: absolute;
@@ -212,6 +225,35 @@ footer h5 {
     color: white;
   }
 
+
+  .carrito{
+    min-height: 80vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .table__productos{
+    display: flex;
+  }
+  
+  .hide, .remove{
+    display: none;
+  }
+
+  .divPrecioDolares{
+    display: none;
+}
+
+.dolarOficial{
+    color: darkolivegreen;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.dolarBlue{
+    color: darkslateblue;
+    font-size: 18px;
+    font-weight: bolder;
+}
 @keyframes desplazarDesdeArriba {
     0% {
         transform: translateY(-100%);

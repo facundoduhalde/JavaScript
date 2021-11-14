@@ -1,0 +1,28 @@
+[
+{
+    "id": 1,
+    "nombre": "Colchoneta 100*5*5",
+    "categoria": "Colchonetas",
+    "precio": 1000,
+    "precioIva": 1210,
+    "stock": 50,
+    "imagen": "./img/1.png"
+},
+ {
+    "id": 2,
+    "nombre": "Core Bag 10 Kg Fitness",
+    "categoria": "Peso",
+    "precio": 2700,
+    "precioIva": 3267,
+    "stock": 10,
+    "imagen": "./img/2.jpg"
+}, {
+    "id": 3,
+    "nombre": "Tobilleras Reforzadas + Rueda Abdominal",
+    "categoria": "Combos",
+    "precio": 1109,
+    "precioIva": 1341.89,
+    "stock": 10,
+    "imagen": "./img/combo1.jpg"
+}
+]

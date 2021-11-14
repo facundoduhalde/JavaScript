@@ -44,8 +44,7 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav me-2">
-                    <li><i class="fa fa-shopping-cart"></i></li>
-                    <span class="cart__count">0</span>
+                    <!--<li><i class="fa fa-shopping-cart"></i></li> -->
                     <li><a href="backOffice.html"><i class="fa fa-user"></i></a></li>
                 </ul>
 
@@ -75,6 +74,36 @@
             <h2>Nuestros Productos</h2>
             <div id="listaProductos" class="row">
                 
+            </div>
+        </div>
+    </div>
+    <div id="carrito">
+        <div class="container">
+            <br>       
+            <div id="listaCarrito" class="row">
+                <table class="table table-striped table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Precio unitario</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody class="tbodyCarrito">
+
+                    </tbody>
+                  </table> 
+                  <br><br>
+                  <div class="row mx-4">
+                    <div class="col">
+                      <h3 class="itemCartTotal text-black">Total: 0</h3>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                      <button class="btn btn-success">COMPRAR</button>
+                    </div>
+                  </div>
+                  <br><br>
             </div>
         </div>
     </div>
@@ -151,9 +180,7 @@
                 </div>
                 <div class="col-xs-8 col-md-6">
                     <p>Seguinos en nuestras redes sociales:</p>
-                    <a href="http://www.facebook.com" class="fa fa-facebook"></a>
-                    <a href="http://www.twitter.com" class="fa fa-twitter"></a>
-                    <a href="http://www.instagram.com" class="fa fa-instagram"></a>
+                    <a href="http://www.instagram.com/mr.gymshop" class="fa fa-instagram"></a>
                 </div>
             </div>
         </div>
@@ -162,8 +189,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
-    <script src="app.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./js/carrito.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>

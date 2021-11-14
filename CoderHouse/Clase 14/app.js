@@ -55,7 +55,7 @@ inputPrecio.change(function (e) {
     divStock.fadeIn(1500);
     var precioIva = inputPrecio.val() * 1.21
     inputPrecioConIva.val(precioIva)
-     calculaPrecioEnDolares()
+    calculaPrecioEnDolares()
 })
 
 inputStock.change(function (e) {

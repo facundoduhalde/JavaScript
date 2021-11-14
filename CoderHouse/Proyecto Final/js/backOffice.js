@@ -1,24 +1,42 @@
 /*****************************DESDE EL BACKOFFICE SE GENERAN LOS PRODUCTOS Y SE ALMACENAN EL EL LOCAL STORAGE AGREGANDOLOS AL DOM DEL INDEX************************************************************** */
 /*DECLARACION CLASE PRODUCTOS*/
 class Producto {
-    constructor({ nombreProducto, stockProducto, precioProducto, precioConIvaProducto, categoriaProducto }) {
+    constructor({ idProducto, nombreProducto, stockProducto, precioProducto, precioConIvaProducto, categoriaProducto, imgProducto }) {
+        this.id = idProducto;
         this.nombre = nombreProducto;
         this.categoria = categoriaProducto;
         this.precio = precioProducto;
         this.precioIva = precioConIvaProducto;
         this.stock = stockProducto;
+        this.imagen = imgProducto
     }
 }
+
+const urlApi = "https://www.dolarsi.com/api/api.php?type=valoresprincipales"
 
 /*DECLARACION ARRAY PRODUCTOS*/
 const listaProductos = [];
 
+const getNextId = () => {
+    let id = 1;
+    for (const prd of JSON.parse(localStorage.getItem("productos"))) {
+        ++id
+    }
+    document.getElementById("id").value = id
+}
+
+getNextId()
+
+
+
 
 /*FUNCION PARA TOMAR EL CAMPO PRECIO, CALCULAR EL IVA Y ACTUALIZAR EL CAMPO PRECIO IVA EN EL EVENTO CHANGE*/
 var inputPrecio = document.getElementById("precio");
+let divPrecioEnDolares = $(".divPrecioDolares")
 
 inputPrecio.addEventListener("change", () => {
     calculoIva(document.getElementById("precio").value)
+    calculaPrecioEnDolares()
 })
 
 const calculoIva = precio => {
@@ -39,11 +57,13 @@ botonAgregar.addEventListener("click", (e) => {
 
 const guardarDatos = () => {
     const producto = new Producto({
+        idProducto: id.value,
         nombreProducto: document.getElementById("nombre").value,
         categoriaProducto: document.getElementById("categoria").value,
         precioProducto: document.getElementById("precio").value,
         precioConIvaProducto: document.getElementById("precioIva").value,
-        stockProducto: document.getElementById("stock").value
+        stockProducto: document.getElementById("stock").value,
+        imgProducto: "./img/newItem.jpg"
     })
     if (document.getElementById("nombre").value != "" && document.getElementById("categoria").value != "" && document.getElementById("precio").value != "" && document.getElementById("stock").value != "") {
         if (localStorage.getItem("productos") == null) {
@@ -60,7 +80,8 @@ const guardarDatos = () => {
             icon: "success",
         });
         document.getElementById("formProductos").reset()
-
+        divPrecioEnDolares.empty()
+        getNextId()
     }
     else {
         swal({
@@ -82,10 +103,12 @@ botonLogin.addEventListener("click", (e) => {
 
 let intentosLogin = 3;
 document.getElementById('Productos').hidden = true
+
 function validarUsuario() {
     //debugger
     var username = document.getElementById("user").value;
     var password = document.getElementById("password").value;
+    //USUARIO ADMIN CLAVE ADMIN *************************************************************
     if (username == "admin" && password == "admin") {
         swal({
             title: "Bienvenido " + username,
@@ -119,5 +142,24 @@ inputPassword.addEventListener("keypress", function (event) {
         document.getElementById("btnLogin").click();
     }
 });
+
+let calculaPrecioEnDolares = () => {
+    divPrecioEnDolares.empty()
+    divPrecioEnDolares.fadeIn(1500)
+
+    $.get(urlApi, (data, estado) => {
+        if (estado == "success") {
+            data.forEach(element => {
+                if (element.casa.nombre === "Dolar Oficial") {
+                    let precioADolarOficial = parseInt(document.getElementById("precio").value) / parseInt(element.casa.venta)
+                    divPrecioEnDolares.append(`<p class="dolarOficial">Precio en Dolar Oficial: US$ ` + precioADolarOficial.toFixed(2) + ` - Referencia: ` + element.casa.venta + `</p>`)
+                } else if (element.casa.nombre === "Dolar Blue") {
+                    let precioADolarBlue = parseInt(document.getElementById("precio").value) / parseInt(element.casa.venta)
+                    divPrecioEnDolares.append(`<p class="dolarBlue">Precio en Dolar Blue: US$ ` + precioADolarBlue.toFixed(2) + ` - Referencia: ` + element.casa.venta + `</p>`)
+                }
+            });
+        }
+    })
+}
 
 
